@@ -25,7 +25,7 @@ const CustomButton = (props:iButton) => (
 const styles = StyleSheet.create({
     container: {
       borderRadius: 10,
-      width: 300,
+      minWidth: 300,
       padding:4,
     
     },

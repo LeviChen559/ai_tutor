@@ -1,20 +1,28 @@
 import * as React from "react";
-import { TextInput } from "react-native-paper";
-import {  StyleSheet, View } from 'react-native';
+import {
+  TextInput,
+  DefaultTheme,
+  Provider as PaperProvider,
+} from "react-native-paper";
+import { StyleSheet, View } from "react-native";
 
 interface iTextInput {
-    text: string;
-    setText: (text: string) => void;
-
+  text: string;
+  setText: (text: string) => void;
 }
 
-const TextArea = (
-  props:iTextInput
-) => {
-  
+const theme = {
+  ...DefaultTheme,
+  roundness: 16,
+  colors: {
+    ...DefaultTheme.colors,
+  },
+};
 
+const TextArea = (props: iTextInput) => {
   return (
-    <View style={styles.container}>
+    <PaperProvider theme={theme}>
+      <View style={styles.container}>
         <TextInput
           id="textarea"
           multiline
@@ -24,27 +32,26 @@ const TextArea = (
           value={props.text}
           onChangeText={props.setText}
         />
-    </View>
+      </View>
+    </PaperProvider>
   );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-      padding: 0,
-    },
-    textArea: {
-      padding: 10,
-      fontSize: 16,
-      color: 'black',
-      backgroundColor: '#ffffff',
-      height: 300,
-      minWidth: 300,
-      borderRadius: 16,
-      borderColor: '#000',
-      borderWidth: 1,
-      textAlignVertical: 'top', // this will align the text to the top
-    },
-  });
-  
+  container: {
+    flex: 1,
+    padding: 0,
+  },
+  textArea: {
+    padding: 10,
+    fontSize: 16,
+    color: "black",
+    backgroundColor: "#ffffff",
+    height: 400,
+    minWidth: 300,
+    borderColor: "#000",
+    textAlignVertical: "top", // this will align the text to the top
+  },
+});
+
 export default TextArea;
