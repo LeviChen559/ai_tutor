@@ -11,7 +11,7 @@ import ClipTimer from "@/components/clipTimer";
 import React from "react";
 import { MainContainer, TaskContainer } from "./style";
 
-export default function TabTwoScreen() {
+const WritingScreen=()=> {
   const [text, setText] = React.useState("");
   return (
     <ParallaxScrollView
@@ -66,6 +66,7 @@ export default function TabTwoScreen() {
     </ParallaxScrollView>
   );
 }
+export default WritingScreen;
 const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   headerImage: {
