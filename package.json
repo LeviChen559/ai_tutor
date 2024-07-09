@@ -20,6 +20,7 @@
     "@emotion/react": "^11.11.4",
     "@expo/metro-runtime": "~3.2.1",
     "@expo/vector-icons": "^14.0.2",
+    "@expo/webpack-config": "^19.0.1",
     "@react-navigation/native": "^6.0.2",
     "expo": "~51.0.18",
     "expo-constants": "~16.0.2",
